@@ -1,0 +1,60 @@
+//Custom scss file
+
+a:hover{
+    cursor: url(../../public/images/icons/icon_hammer.png), auto;
+}
+
+.btn.btn-primary:hover{
+    cursor: url(../../public/images/icons/icon_hammer.png), auto;
+    color: black;
+    border-color: black;
+}
+
+.btn.btn-primary{
+    color: #ffffff;
+    background-color: #264653;
+    border-color: #ffffff;
+}
+
+#navbarResponsive a{
+    margin-right: 2rem;
+}
+
+#nav-logo{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+#nav-bar a{
+    font-size: x-large;
+}
+
+.jumbotron {
+    background-color: #A5C4D9;
+    text-align: center;
+}
+
+.icon-text {
+    font-weight: bold;
+}
+
+footer{
+    font-family:sans-serif ;
+    background-color: #264653;
+    color: #d5d5d5;
+    padding: 1rem;
+}
+
+footer a{
+    color: #d5d5d5;
+}
+
+hr.light{
+    border-top: 0.5px solid #d5d5d5;
+    width: 70%;
+}
+
+hr.light-100{
+    border-top: 0.5px solid #d5d5d5;
+    width: 100%;
+}
