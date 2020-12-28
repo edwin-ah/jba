@@ -17,7 +17,7 @@
         <div id="nav-bar">
             <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
               <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="{{ route('index') }}">
                   <img id="nav-logo" src="{{ URL('images/logos/jba_logo.png') }}" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -25,6 +25,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
+                    @auth
+                    <li class="nav-item"> 
+                      <a class="nav-link" href="#">Uppdatera projekt</a>
+                    </li>
+                    <li class="nav-item"> 
+                      <a class="nav-link" href="#">Logga ut</a>
+                    </li>
+                    @endauth
                     <li class="nav-item active"> 
                       <a class="nav-link" href="index.html">Hem</a>
                     </li>
@@ -46,7 +54,7 @@
           @yield('content')
 
           <!--Footer-->
-          <footer class="fixed-bottom">
+          <footer>
             <div class="container-fluid padding">
                 <div class="row align-items-center text-center">
                     <div class="col-md-4">
