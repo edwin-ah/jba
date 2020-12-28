@@ -29,7 +29,7 @@
                       <a class="nav-link" href="index.html">Hem</a>
                     </li>
                     <li class="nav-item"> 
-                      <a class="nav-link" href="#">Om Oss</a>
+                      <a class="nav-link" href="#">Om oss</a>
                     </li>
                     <li class="nav-item"> 
                         <a class="nav-link" href="#">Projekt</a>
@@ -46,31 +46,25 @@
           @yield('content')
 
           <!--Footer-->
-          <!--Logo, Kontakt, länkar ... utv av-->
-          <footer>
+          <footer class="fixed-bottom">
             <div class="container-fluid padding">
                 <div class="row align-items-center text-center">
-                    <div class="col-md-4 align-baseline">
+                    <div class="col-md-4">
                         <img class="footer-logo" src="{{ URL('images/logos/jba_footer_logo.png') }}" alt="logo">
                     </div>
                     <div class="col-md-4">
                         <h5>Kontakt:</h5>
-                        <hr class="light">
-                        <p>0725424064</p>
+                        <span>0725424064</span>
+                        <br/>
                         <p>edwin.hallsten@hotmail.com</p>
                     </div>
                     <div class="col-md-4">
                         <h5>Länkar:</h5>
-                        <hr class="light">
                         <a href="#">Om oss</a>
                         <br/>
                         <a href="#">Projekt</a>
                         <br/>
                         <a href="#">Kontakt</a>
-                    </div>
-                    <div class="col-12">
-                        <hr class="light-100">
-                        <p>Utvecklad av Edwin Andersson Hallsten<p>
                     </div>
                 </div>
             </div>
