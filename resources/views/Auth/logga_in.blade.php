@@ -7,6 +7,13 @@
             @csrf
             <h2>Logga in</h2>
             <div class="container form_container py-3 px-5">
+                <!--Kolla om användaren försökt logga in-->
+                @if (session('inloggad'))
+                    <div class="alert alert-danger text-center">
+                        <p>{{ session('inloggad') }}</p>
+                    </div>  
+                @endif
+
                 <div class="form-group px-3">
                     <label for="username">Användarnamn</label>
                     <input type="text" id="username" name="username" placeholder="Ange ditt användarnamn" class="form-control @error('username') border border-danger @enderror" value="{{ old('username') }}">

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjektController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -14,3 +16,9 @@ Route::post('/registrera', [RegisterController::class, 'store']);
 //Routes för att logga in
 Route::get('/logga_in', [LoginController::class, 'index'])->name('login');
 Route::post('/logga_in', [LoginController::class, 'loginUser']);
+
+//Route för att logga ut
+Route::post('/logga_ut', [LogoutController::class, 'logout'])->name('logout');
+
+//Route för att visa projektlista
+Route::get('/projekt', [ProjektController::class, 'index'])->name('projekt');

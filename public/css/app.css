@@ -10938,7 +10938,8 @@ a.btn {
   margin-left: 0px;
 }
 
-#nav-bar a {
+#nav-bar a,
+.btn-logout {
   font-size: x-large;
 }
 

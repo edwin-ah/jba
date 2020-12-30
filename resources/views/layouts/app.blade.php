@@ -25,14 +25,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav ml-auto">
-                    @auth
-                    <li class="nav-item"> 
-                      <a class="nav-link" href="#">Uppdatera projekt</a>
-                    </li>
-                    <li class="nav-item"> 
-                      <a class="nav-link" href="#">Logga ut</a>
-                    </li>
-                    @endauth
                     <li class="nav-item active"> 
                       <a class="nav-link" href="index.html">Hem</a>
                     </li>
@@ -40,11 +32,22 @@
                       <a class="nav-link" href="#">Om oss</a>
                     </li>
                     <li class="nav-item"> 
-                        <a class="nav-link" href="#">Projekt</a>
+                        <a class="nav-link" href="{{ route('projekt') }}">Projekt</a>
                       </li>
                     <li class="nav-item"> 
                       <a class="nav-link" href="#">Kontakt</a>
                     </li>
+                    @auth
+                    <li class="nav-item"> 
+                      <a class="nav-link" href="#">Uppdatera projekt</a>
+                    </li>
+                    <li class="nav-item"> 
+                      <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <input type="submit" value="Logga ut" class="btn btn-outline-dark btn-logout">
+                      </form>
+                    </li>
+                    @endauth
                   </ul>
                 </div>
               </div>
