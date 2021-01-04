@@ -6,8 +6,8 @@
           <h1 class="ml-5 mb-3 ">Johannes Lundebacke</h1>
           <p class="mx-5 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur! Odit, blanditiis deleniti! Id veritatis porro officiis unde! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia cumque ipsum maiores at eaque laborum, ratione explicabo natus harum ea sed molestias repellendus nisi hic iure delectus, error commodi tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.?</p>
           <hr class="my-4">
-          <a class="ml-2 btn btn-primary" href="#">Mer om oss!</a>
-          <a class="ml-2 btn btn-primary" href="#">Kontakta oss!</a>
+          <a class="ml-2 btn btn-primary a-btn" href="#">Mer om oss!</a>
+          <a class="ml-2 btn btn-primary a-btn" href="#">Kontakta oss!</a>
         </div>
       </div>
 

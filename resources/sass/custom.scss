@@ -14,13 +14,13 @@ a:hover{
     cursor: url(../../public/images/icons/icon_hammer.png), auto;
 }
 
-.btn.btn-primary:hover{
+.btn.btn-primary:hover, .btn.btn-danger:hover{
     cursor: url(../../public/images/icons/icon_hammer.png), auto;
     color: black;
     border-color: black;
 }
 
-a.btn{
+.a-btn{
     color: #ffffff;
     background-color: #264653;
     border-color: #ffffff;
@@ -67,6 +67,19 @@ footer a{
 .form_container{
     background-color: #ffffff;
     border-radius: 1rem;
+}
+
+.img-preview{
+    display: none;
+    margin-top: 1rem;
+    width: 300px;
+    min-height: 100px;
+}
+
+.img-preview-img{
+    display: none;
+    width: 100%;
+    max-height: 300px;
 }
 
 @media only screen and (max-width: 767px){
