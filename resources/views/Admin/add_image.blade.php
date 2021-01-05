@@ -4,27 +4,27 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Lägg till bild</h4>
-            <form action="{{ route('image') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('add_image') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container form_container py-3 px-5">
                     <div class="form-group px-3">
-                        <label for="projektnamn">Projektnamn</label>
-                        <select id="projektnamn" name="projektnamn" class="form-control @error('projektnamn') border border-danger @enderror" value="{{ old('projektnamn') }}">
-                            @foreach ($projektnamn as $namn)
-                                <option>{{ $namn->projektnamn }}</option>
+                        <label for="projectname">Projektnamn</label>
+                        <select id="projectname" name="projectname" class="form-control @error('projectname') border border-danger @enderror" value="{{ old('projectname') }}">
+                            @foreach ($projectname as $name)
+                                <option>{{ $name->projectname }}</option>
                             @endforeach
                         </select>
     
-                        @error('projektnamn')
+                        @error('projectname')
                             <div>
                                 <p class="text-danger">{{ $message }}</p>
                             </div>
                         @enderror
                     </div>
                     <div class="form-group px-3">
-                        <label for="bild">Välj en bild</label>
-                        <input type="file" id="bild" name="bild" placeholder="Välj en bild" class="form-control-file">
-                        @error('bild')
+                        <label for="image">Välj en bild</label>
+                        <input type="file" id="image" name="image" placeholder="Välj en bild" class="form-control-file">
+                        @error('image')
                             <div>
                                 <p class="text-danger">{{ $message }}</p>
                             </div>  

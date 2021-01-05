@@ -15,16 +15,17 @@ class AddProjektController extends Controller
     public function storeProject(Request $request){
         //Validera
         $this->validate($request, [
-            'projektnamn'=>'required|unique:projects',
+            'projectname'=>'required|unique:projects',
+            'description'=>'required'
         ]);
 
         //Spara projektet i databasen
         Project::create([
-            'projektnamn' => $request->projektnamn,
-            'beskrivning'=> $request->beskrivning
+            'projectname' => $request->projectname,
+            'description'=> $request->description
         ]);
 
-        return redirect()->route('projekt')
+        return redirect()->route('project')
             ->with('success', 'Projektet har nu laddats upp!');
     }
 }

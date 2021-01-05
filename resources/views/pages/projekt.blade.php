@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+        <!--Kolla om det finns någon sessions variabel-->
         @if($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show text-center">
             <p class="lead">{{ $message }}</p>
@@ -10,23 +12,24 @@
         </div>
         @endif
         
+        <!--Visa detta om användaren är inloggad-->
         @auth
             <div>
-                <a href="{{ route('add_projekt')}}" class="btn btn-primary btn-block">Lägg till projekt</a>
-                <a href="{{ route('image')}}" class="btn btn-primary btn-block">Lägg till bild</a>
+                <a href="{{ route('add_project')}}" class="btn btn-primary btn-block">Lägg till projekt</a>
+                <a href="{{ route('add_image')}}" class="btn btn-primary btn-block">Lägg till bild</a>
             </div>
         @endauth
-        @if ($projekten->count())
+        @if ($projects->count())
             <div class="row">
-                @foreach ($projekten as $projekt)
+                @foreach ($projects as $project)
                     <div class="col-sm-4 col-md-4">
                         <div class="card my-4">
-                            <img class="card-img-top" src="/storage/projectImages/{{ $projekt->namn }}" alt="projektbild">
+                            <img class="card-img-top" src="/storage/projectImages/{{ $project->imagename }}" alt="projektbild">
                             <div class="card-body">
                                 @auth
-                                    <h5 class="card-title">{{ $projekt->projektnamn }}</h5>
+                                    <h5 class="card-title">{{ $project->projectname }}</h5>
                                 @endauth
-                                <p class="card-text">{{ $projekt->beskrivning }}</p>
+                                <p class="card-text">{{ $project->description }}</p>
                                 @auth
                                     <div class="d-flex justify-content-between align-items-center">
                                         <a href="#" class="btn btn-primary mr-1 ml-1">Redigera projekt</a>

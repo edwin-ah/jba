@@ -1,5 +1,5 @@
 //Funktion för att förhandsvisa bild
-const inputImage = document.getElementById('bild');
+const inputImage = document.getElementById('image');
 inputImage.addEventListener("change", function() {
     const file = this.files[0];
     const previewContainer = document.getElementById('img-preview');

@@ -32,7 +32,7 @@
                   <a class="nav-link" href="#">Om oss</a>
                 </li>
                 <li class="nav-item"> 
-                    <a class="nav-link" href="{{ route('projekt') }}">Projekt</a>
+                    <a class="nav-link" href="{{ route('project') }}">Projekt</a>
                   </li>
                 <li class="nav-item"> 
                   <a class="nav-link" href="#">Kontakt</a>

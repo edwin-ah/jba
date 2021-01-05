@@ -8,16 +8,13 @@ use Illuminate\Support\Facades\DB;
 class ProjektController extends Controller
 {
     public function index(){
-        //Hämta alla projekt
-        $projekten = DB::table('projects')
-        ->join('project_images', 'projekt', 'projektnamn')
+        //Hämta alla projekt med bilderna som tillhör projektet
+        $projects = DB::table('projects')
+        ->join('project_images', 'project', 'projectname')
         ->get();
 
-        //dd($projekten);
-        
-
         return view('pages.projekt', [
-            'projekten' => $projekten 
+            'projects' => $projects 
         ]);
     }
 }

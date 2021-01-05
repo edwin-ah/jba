@@ -7,35 +7,35 @@ use App\Models\Project;
 use App\Models\Project_image;
 use Illuminate\Http\Request;
 
-class ImageController extends Controller
+class AddImageController extends Controller
 {
     public function index(){
-        $projektnamn = Project::get('projektnamn');
+        $projectname = Project::get('projectname');
         
         return view('admin.add_image', [
-            'projektnamn' => $projektnamn
+            'projectname' => $projectname
         ]);
     }
 
     public function storeImage(Request $request){
         $this->validate($request, [
-            'bild' => 'required|image|mimes:jpg,png,jpeg'
+            'image' => 'required|image|mimes:jpg,png,jpeg'
         ]);
 
         //Hämta filens namn och filväg
-        $filenameWithExt = $request->file('bild')->getClientOriginalName();
+        $filenameWithExt = $request->file('image')->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        $extension = $request->file('bild')->getClientOriginalExtension();
+        $extension = $request->file('image')->getClientOriginalExtension();
         $filenameToStore = $filename.'_'.time().'.'.$extension;
-        $path = $request->file('bild')->storeAs('public/projectImages', $filenameToStore);
+        $request->file('image')->storeAs('public/projectImages', $filenameToStore);
 
         //Spara filen i databasen
         Project_image::create([
-            'namn' => $filenameToStore,
-            'projekt' => $request->projektnamn
+            'imagename' => $filenameToStore,
+            'project' => $request->projectname
         ]);
 
-        return redirect()->route('projekt')
+        return redirect()->route('project')
             ->with('success', 'Bilden har nu laddats upp!');
     }
 }

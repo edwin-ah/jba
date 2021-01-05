@@ -11,8 +11,8 @@ class Project_image extends Model
     use HasFactory;
 
     protected $fillable = [
-        'namn',
-        'projekt'
+        'imagename',
+        'project'
     ];
 
     public function projects(){
