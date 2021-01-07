@@ -15,7 +15,7 @@ class Project_image extends Model
         'project'
     ];
 
-    public function projects(){
-        return $this->belongsTo(Project::class);
+    public function project(){
+        return $this->belongsTo(Project::class, 'project', 'projectname');
     }
 }

@@ -22,16 +22,21 @@
         @if ($projects->count())
             <div class="row">
                 @foreach ($projects as $project)
-                    <div class="col-sm-4 col-md-4">
-                        <div class="card my-4">
-                            <img class="card-img-top" src="/storage/projectImages/{{ $project->imagename }}" alt="projektbild">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth">
+                            @if (count($project->images) == 0)
+                                <p>Ingen bild</p>
+                            @else
+                                <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild">
+                            @endif
+                            
                             <div class="card-body">
                                 @auth
                                     <h5 class="card-title">{{ $project->projectname }}</h5>
                                 @endauth
                                 <p class="card-text">{{ $project->description }}</p>
                                 @auth
-                                    <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex justify-content-between align-items-center admin-buttons">
                                         <a href="#" class="btn btn-primary mr-1 ml-1">Redigera projekt</a>
                                         <a href="#" class="btn btn-primary mr-1 ml-1">Radera bilder</a>
                                         <a href="#" class="btn btn-danger mr-1 ml-1">Radera projektet</a>

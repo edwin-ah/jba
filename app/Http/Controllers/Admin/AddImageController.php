@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 class AddImageController extends Controller
 {
     public function index(){
-        $projectname = Project::get('projectname');
+        $projectname = Project::select('projectname')
+                                ->orderBy('created_at', 'desc')
+                                ->get();
         
         return view('admin.add_image', [
             'projectname' => $projectname
