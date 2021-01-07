@@ -26,8 +26,34 @@
                         <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth">
                             @if (count($project->images) == 0)
                                 <p>Ingen bild</p>
-                            @else
-                                <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild">
+                            @elseif(count($project->images) == 1)
+                                <div class="img-container">
+                                    <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild" data-original="/storage/projectImages/{{ $project->images->first()->imagename }}" />
+                                </div>
+                            @elseif(count($project->images) > 1)
+                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        
+                                        @foreach ($project->images->pluck('imagename') as $item)
+                                            <div class="carousel-item @if($loop->first) active @endif">                                                
+                                                <div class="img-container">
+                                                    <img src="/storage/projectImages/{{$item}}" class="d-block w-100" alt="projektbild" data-original="/storage/projectImages/{{$item}}"/>                                                    
+                                                </div>
+                                            </div>
+                                        @endforeach
+
+                                        <a class="carousel-control-prev carousel-btn" href="#carouselExampleControls" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden"></span>
+                                        </a>
+                                        <a class="carousel-control-next carousel-btn" href="#carouselExampleControls" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+
                             @endif
                             
                             <div class="card-body">
@@ -50,5 +76,11 @@
         @else
             <h1 class="display-4 mt-5 text-center">Det finns inga projekt för tillfället</h1>
         @endif
-    </div>    
+    </div>
+
+    <div class="div-modal">
+        <img src="" class="img-modal"/>
+    </div>
+
+    <script src="{{ asset('js/custom.js') }}"></script>
 @endsection
