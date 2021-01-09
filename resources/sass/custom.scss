@@ -96,7 +96,6 @@ footer a{
 .project-card img{
     width: 100%;
     height: 300px;
-    border-bottom: #000000, 1px, solid;
 }
 
 .img-container{
@@ -141,6 +140,11 @@ footer a{
 .img-modal.open{
     height: 60%;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.delete-image-div img{
+    width: 330px;
+    height: 300px;
 }
 
 @media only screen and (max-width: 767px){

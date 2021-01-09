@@ -47,4 +47,9 @@
 </div>
 
 <script src="{{ asset('js/custom.js') }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        previewImg();
+    });
+</script>
 @endsection

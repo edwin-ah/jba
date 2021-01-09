@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\Admin\AddProjektController;
 use App\Http\Controllers\Admin\AddImageController;
+use App\Http\Controllers\Admin\DeleteImageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjektController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -34,4 +34,5 @@ Route::post('/add_projekt', [AddProjektController::class, 'storeProject']);
 Route::get('/add_image', [AddImageController::class, 'index'])->name('add_image');
 Route::post('/add_image', [AddImageController::class, 'storeImage']);
 
-Route::get('/test', [TestController::class, 'index']);
+Route::get('delete_image/{project}', [DeleteImageController::class, 'index'])->name('delete_image_view');
+Route::post('delete_image', [DeleteImageController::class, 'delete'])->name('delete_image');
