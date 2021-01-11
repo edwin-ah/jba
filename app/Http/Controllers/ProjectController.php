@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
-class ProjektController extends Controller
+class ProjectController extends Controller
 {
     public function index(){
         //Hämta alla projekt med bilderna som tillhör projektet

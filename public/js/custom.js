@@ -53,3 +53,17 @@ function showModal(){
         }
     });
 }
+
+//Funktion för att ändra färg på radera-knapp
+function changeBtnColor(){
+    var button = document.getElementById("delete-btn");
+    var isChecked = document.getElementById("deleteCheck");
+    if(isChecked.checked){
+        button.classList.remove("btn-primary");
+        button.classList.add("btn-danger");
+    }
+    else if(!isChecked.checked){
+        button.classList.add("btn-primary");
+        button.classList.remove("btn-danger");
+    }
+}

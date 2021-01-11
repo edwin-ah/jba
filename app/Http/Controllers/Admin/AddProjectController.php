@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
-class AddProjektController extends Controller
+class AddProjectController extends Controller
 {
     public function index(){
         return view('Admin.add_projekt');

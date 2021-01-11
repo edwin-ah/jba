@@ -17,7 +17,7 @@ class CreateProjectImagesTable extends Migration
             $table->id()->autoIncrement();
             $table->string('imagename');
             $table->string('project');
-            $table->foreign('project')->references('projectname')->on('projects')->onDelete('cascade');
+            $table->foreign('project')->references('projectname')->on('projects')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
