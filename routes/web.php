@@ -29,15 +29,15 @@ Route::post('/logga_ut', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/projekt', [ProjectController::class, 'index'])->name('project');
 
 //Route för att lägga till och ändra projekt
-Route::get('/add_projekt', [AddProjectController::class, 'index'])->name('add_project');
-Route::post('/add_projekt', [AddProjectController::class, 'storeProject']);
-Route::get('/edit_projekt/{project}', [EditProjectController::class, 'index'])->name('edit_project_view');
-Route::post('/edit_projekt', [EditProjectController::class, 'editProject'])->name('edit_project');
-Route::get('/delete_projekt/{project}', [DeleteProjectController::class, 'index'])->name('delete_project_view');
-Route::post('/delete_projekt', [DeleteProjectController::class, 'deleteProject'])->name('delete_project');
+Route::get('/add_projekt', [AddProjectController::class, 'index'])->name('add_project')->middleware('auth');
+Route::post('/add_projekt', [AddProjectController::class, 'storeProject'])->middleware('auth');
+Route::get('/edit_projekt/{project}', [EditProjectController::class, 'index'])->name('edit_project_view')->middleware('auth');
+Route::post('/edit_projekt', [EditProjectController::class, 'editProject'])->name('edit_project')->middleware('auth');
+Route::get('/delete_projekt/{project}', [DeleteProjectController::class, 'index'])->name('delete_project_view')->middleware('auth');
+Route::post('/delete_projekt', [DeleteProjectController::class, 'deleteProject'])->name('delete_project')->middleware('auth');
 
 //Route för att hantera bilder
-Route::get('/add_image', [AddImageController::class, 'index'])->name('add_image');
-Route::post('/add_image', [AddImageController::class, 'storeImage']);
-Route::get('delete_image/{project}', [DeleteImageController::class, 'index'])->name('delete_image_view');
-Route::post('delete_image', [DeleteImageController::class, 'deleteImage'])->name('delete_image');
+Route::get('/add_image', [AddImageController::class, 'index'])->name('add_image')->middleware('auth');
+Route::post('/add_image', [AddImageController::class, 'storeImage'])->middleware('auth');
+Route::get('delete_image/{project}', [DeleteImageController::class, 'index'])->name('delete_image_view')->middleware('auth');
+Route::post('delete_image', [DeleteImageController::class, 'deleteImage'])->name('delete_image')->middleware('auth');
