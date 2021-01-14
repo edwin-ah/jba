@@ -9,8 +9,8 @@ class ProjectController extends Controller
 {
     public function index(){
         //Hämta alla projekt med bilderna som tillhör projektet
-        $projects = Project::get();
-
+        $projects = Project::with('images')->get();
+        
         return view('pages.projekt', [
             'projects' => $projects 
         ]);

@@ -13,6 +13,7 @@ use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/kontakt', [HomeController::class, 'contact'])->name('contact');
 
 //Routes för att registrera. Namn är register
 Route::get('/registrera', [RegisterController::class, 'index'])->name('register');

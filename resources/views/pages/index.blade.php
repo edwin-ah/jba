@@ -16,13 +16,13 @@
       <div class="container-fluid padding">
         <div class="row text-center padding">
           <div class="col-xs-12 col-md-4">
-            <a href="#">
+            <a href="{{ route('project') }}">
               <img src="{{ URL('images/icons/project_icon.png') }}" alt="projekt-ikon">
               <h4 class="icon-text">Kolla in våra projekt</h4>
             </a>  
           </div>
           <div class="col-xs-12 col-md-4">
-            <a href="#">
+            <a href="{{ route('contact') }}">
               <img src="{{ URL('images/icons/phone_icon.png') }}" alt="kontakt-ikon">
               <h4 class="icon-text">Kontakta oss</h4>
             </a>

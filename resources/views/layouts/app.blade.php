@@ -35,7 +35,7 @@
                     <a class="nav-link" href="{{ route('project') }}">Projekt</a>
                   </li>
                 <li class="nav-item"> 
-                  <a class="nav-link" href="#">Kontakt</a>
+                  <a class="nav-link" href="{{ route('contact') }}">Kontakt</a>
                 </li>
                 @auth
                 <li class="nav-item"> 
