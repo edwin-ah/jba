@@ -10913,6 +10913,10 @@ body {
   background-color: #F4F8FA;
 }
 
+.navbar {
+  background-color: #A5C4D9 !important;
+}
+
 a:hover {
   cursor: url(/images/icon_hammer.png?6a6a4d4ebf2baa816832ccc1c20cf6b8), auto;
 }
@@ -11050,6 +11054,26 @@ footer a {
 .delete-image-div img {
   width: 330px;
   height: 300px;
+}
+
+.contactInfo-list {
+  margin-bottom: 10px;
+}
+
+.contactInfo-list li {
+  list-style-type: none;
+}
+
+.contactInfo hr {
+  height: 3px;
+  color: white;
+  background-color: white;
+  border: none;
+}
+
+.icons {
+  position: relative;
+  top: 5px;
 }
 
 @media only screen and (max-width: 767px) {

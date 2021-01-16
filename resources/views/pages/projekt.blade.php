@@ -22,7 +22,7 @@
         
         <!--Visa detta om användaren är inloggad-->
         @auth
-            <div>
+            <div class="mt-3">
                 <a href="{{ route('add_project')}}" class="btn btn-primary btn-block">Lägg till projekt</a>
                 <a href="{{ route('add_image')}}" class="btn btn-primary btn-block">Lägg till bild</a>
             </div>
@@ -77,6 +77,9 @@
                                         <a href="{{ route('delete_project_view', ['project' => $project->projectname]) }}" class="btn btn-danger mr-1 ml-1">Radera projektet</a>
                                     </div>
                                 @endauth
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Projekt skapades {{ $project->created_at }}</small>
                             </div>
                         </div>
                     </div>

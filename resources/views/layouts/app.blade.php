@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <title>JBA</title>
-
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <!--Google Web Fonts-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     </head>
     <body>
       <!-- Navbar -->
@@ -65,9 +65,9 @@
                 </div>
                 <div class="col-md-4">
                     <h5>Kontakt:</h5>
-                    <span>0725424064</span>
+                    <span>0705904854</span>
                     <br/>
-                    <p>edwin.hallsten@hotmail.com</p>
+                    <p>jba-johannes@hotmail.com</p>
                 </div>
                 <div class="col-md-4">
                     <h5>Länkar:</h5>

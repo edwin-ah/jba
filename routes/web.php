@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +43,6 @@ Route::get('/add_image', [AddImageController::class, 'index'])->name('add_image'
 Route::post('/add_image', [AddImageController::class, 'storeImage'])->middleware('auth');
 Route::get('delete_image/{project}', [DeleteImageController::class, 'index'])->name('delete_image_view')->middleware('auth');
 Route::post('delete_image', [DeleteImageController::class, 'deleteImage'])->name('delete_image')->middleware('auth');
+
+//Route för mail
+Route::post('/kontakt', [MailController::class, 'sendMail'])->name('send_mail');
