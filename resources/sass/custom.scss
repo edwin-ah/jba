@@ -6,50 +6,89 @@ html{
 }
 
 body{
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 125px;
-    background-color: #F4F8FA;
+    background-color: #e6f0f4 !important;
 }
 
-.navbar {
+.bgDiv{
+    background-color: #264653 !important;
+    color: #ffffff;
+}
+
+.navbarBg, .jumbotron{
     background-color: #A5C4D9 !important;
+}
+
+.active{
+    background-color: rgb(213,213,213, 0.3);
 }
 
 a:hover{
     cursor: url(../../public/images/icons/icon_hammer.png), auto;
+    background-color: rgb(213,213,213, 0.3)
 }
 
-.btn.btn-primary:hover, .btn.btn-danger:hover{
+.btn.button{
+    color: #264653;
+    background-color: #E76F51;
+    font-family: 'Open Sans', sans-serif;
+    border-color: #E76F51;
+    font-size: large;
+}
+
+.btn.button:hover{
+    cursor: url(../../public/images/icons/icon_hammer.png), auto;
+    color: black;
+    border-color: black;
+    background-color: #E76F51;
+}
+
+.btn.btn-danger:hover{
     cursor: url(../../public/images/icons/icon_hammer.png), auto;
     color: black;
     border-color: black;
 }
 
-.a-btn{
-    color: #ffffff;
-    background-color: #264653;
-    border-color: #ffffff;
-}
-
-#navbarResponsive a{
+#nav-bar a{
     margin-right: 2rem;
-}
-
-#nav-logo{
-    margin-top: 0px;
-    margin-left: 0px;
-}
-
-#nav-bar a, .btn-logout{
     font-size: x-large;
 }
 
-.jumbotron {
-    background-color: #A5C4D9;
-    text-align: center;
+.btn-logout{
+    font-size: x-large;
+    border: 0px;
+}
+
+.jumbotron h2{
+    color: #264653;
+    font-weight: bolder;
+}
+
+.jumbotron p{
+    font-family: 'Work Sans', sans-serif;
+    color: #000000;
+    font-size: large;
+}
+
+.icon{
+    display: inline-block;
 }
 
 .icon-text {
-    font-weight: bold;
+    color: #264653}
+
+.icon a:hover, .icon .icon-text:hover{
+    text-decoration: none;
+    color: #E76F51;
+}
+
+.icon img:hover ~ .icon-text {
+    visibility: hidden;
+}
+
+.icon img:hover{
+    transform: scale(1.1);
 }
 
 footer{
@@ -57,15 +96,14 @@ footer{
     bottom: 0;
     width: 100%;
     height: 125px;
-    font-family:sans-serif ;
     background-color: #A5C4D9;
-    color: #ffffff;
+    color: #264653;
     padding: 1rem;
-    margin-top: 5rem;
+    font-size: medium;
 }
 
 footer a{
-    color: #ffffff;
+    color: #E76F51;
 }
 
 .form_container{
@@ -87,7 +125,7 @@ footer a{
 }
 
 .project-card{
-    width: 330px;
+    max-width: 330px;
     min-height: 400px;
 }
 
@@ -100,6 +138,12 @@ footer a{
 .project-card img{
     width: 100%;
     height: 300px;
+}
+
+.project-noImg{
+    height: 300px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .img-container{
@@ -116,7 +160,7 @@ footer a{
 }
 
 .div-modal{
-    background: rgba($color: #000000, $alpha: 0.8);
+    background: rgba($color: #000000, $alpha: 0.95);
     position: fixed;
     top: 0;
     left: 0;
@@ -173,12 +217,92 @@ footer a{
   top: 5px;
 }
 
+.required{
+    color: red;
+}
+
+.contact{
+    background-color: #264653 !important;
+}
+
+.about-div{
+    background-color: #264653;
+}
+
+.about-img img{
+    max-width: 100%;
+    height: 80%;
+}
+
+.edit-btn{
+    background-color: #264653;
+    color: #E76F51;
+}
+
+#delete-btn{
+    font-size: large !important;
+}
+
+@media only screen and (max-width: 834px){
+    #nav-bar a, .btn-logout{
+        font-size: large;
+    }
+}
+
 @media only screen and (max-width: 767px){
     body{
-        margin-bottom: 255px;
+        margin-bottom: 195px;
     }
 
     footer{
-        height: 255px;
+        height: 195px;
+    }
+
+    .footer-contact{
+        margin-top: 1rem;
+    }
+
+    .footer-links{
+        display: none;
+    }
+
+    .iconsDiv{
+        margin-top: 20rem;
+        margin-bottom: 20rem;
+    }
+
+    #nav-bar {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    }
+
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .jumbotron h2{
+        font-size: large;
+    }
+
+    .jumbotron p{
+        font-size: medium;
+    }
+
+    .project-card{
+        width: 100%;
+    }
+
+    .projectCards{
+        margin: auto;
+    }
+
+    .img-modal.open{
+        height: 40%;
+        transform: translate(-50%, -50%) scale(1);
     }
 }

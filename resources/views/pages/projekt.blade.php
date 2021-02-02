@@ -2,9 +2,9 @@
 @section('content')
     <div class="container">
 
-        <!--Kolla om det finns någon sessions variabel-->
+        
         @if($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show text-center">
+        <div class="alert alert-success alert-dismissible fade show text-center mt-1">
             <p class="lead">{{ $message }}</p>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -12,7 +12,7 @@
         </div>
 
         @elseif($message = Session::get('failure'))
-            <div class="alert alert-danger alert-dismissible fade show text-center">
+            <div class="alert alert-danger alert-dismissible fade show text-center mt-1">
                 <p class="lead">{{ $message }}</p>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -20,22 +20,29 @@
             </div>
         @endif
         
-        <!--Visa detta om användaren är inloggad-->
+        
         @auth
-            <div class="mt-3">
-                <a href="{{ route('add_project')}}" class="btn btn-primary btn-block">Lägg till projekt</a>
-                <a href="{{ route('add_image')}}" class="btn btn-primary btn-block">Lägg till bild</a>
+            <div class="mt-3 ml-2">
+                <a href="{{ route('add_project')}}" class="btn button mr-1">Lägg till projekt</a>
+                <a href="{{ route('add_image')}}" class="btn button ml-1">Lägg till bild</a>
             </div>
         @endauth
-        <!--Om det finns projekt-->
+
+        
+        <div class="paginator mt-5">
+            {{ $projects->links() }}
+        </div>
+        
+
+        
         @if ($projects->count())
-            <div class="row">
+            <div class="projectCards row">
                 @foreach ($projects as $project)
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
+                        <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth mx-auto">
                             <!--Kolla hur många bilder projektet har-->
                             @if (count($project->images) == 0)
-                                <p>Ingen bild</p>
+                                <p class="mx-auto lead project-noImg">Ingen bild</p>
                             @elseif(count($project->images) == 1)
                                 <div class="img-container">
                                     <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild" data-original="/storage/projectImages/{{ $project->images->first()->imagename }}" />
@@ -44,10 +51,10 @@
                                 <div class="carouselExampleControls-{{ $project->projectname}} carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
                                         
-                                        @foreach ($project->images->pluck('imagename') as $item)
+                                        @foreach ($project->images->pluck('imagename') as $image)
                                             <div class="carousel-item @if($loop->first) active @endif">                                                
                                                 <div class="img-container">
-                                                    <img src="/storage/projectImages/{{$item}}" class="d-block w-100" alt="projektbild" data-original="/storage/projectImages/{{$item}}"/>                                                    
+                                                    <img class="card-img-top" src="/storage/projectImages/{{$image}}" alt="projektbild" data-original="/storage/projectImages/{{$image}}"/>                                                    
                                                 </div>
                                             </div>
                                         @endforeach
@@ -66,20 +73,17 @@
 
                             <div class="card-body">
                                 @auth
-                                    <h5 class="card-title">{{ $project->projectname }}</h5>
+                                    <h5 class="card-title font-weight-bold">{{ $project->projectname }}</h5>
                                 @endauth
                                 <p class="card-text">{{ $project->description }}</p>
                                 <!--Buttons om användaren är inloggad-->
                                 @auth
-                                    <div class="d-flex justify-content-between align-items-center admin-buttons">
+                                    <div class="d-flex admin-buttons">
                                         <a href="{{ route('edit_project_view', ['project' => $project->projectname]) }}" class="btn btn-primary mr-1 ml-1">Redigera projekt</a>
-                                        <a href="{{ route('delete_image_view', ['project' => $project->projectname]) }}" class="btn btn-primary mr-1 ml-1">Radera bilder</a>
+                                        <a href="{{ route('delete_image_view', ['project' => $project->projectname]) }}" class="btn btn-danger mr-1 ml-1">Radera bilder</a>
                                         <a href="{{ route('delete_project_view', ['project' => $project->projectname]) }}" class="btn btn-danger mr-1 ml-1">Radera projektet</a>
                                     </div>
                                 @endauth
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">Projekt skapades {{ $project->created_at }}</small>
                             </div>
                         </div>
                     </div>

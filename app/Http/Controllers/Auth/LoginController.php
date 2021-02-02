@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
+        if(Auth::check()){
+            return redirect()->route('index');
+        }
         return view('auth.logga_in');
     }
 

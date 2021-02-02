@@ -28,6 +28,8 @@ function showModal(){
     const previews = document.querySelectorAll(".img-container img");
     const original = document.querySelector(".img-modal");
     const projects = document.querySelectorAll(".project-card");
+    const paginator = document.querySelectorAll(".paginator");
+    const footer = document.getElementById("#footer");
 
     previews.forEach((preview) => {
         preview.addEventListener("click", () => {
@@ -37,8 +39,10 @@ function showModal(){
             const originalSrc = preview.getAttribute("data-original");
             original.src = originalSrc;
 
+            paginator[0].style.visibility ="hidden";
+
             projects.forEach((project) => {
-                project.style.display="none";
+                project.style.visibility ="hidden";
             });
         });
     });
@@ -47,8 +51,10 @@ function showModal(){
         if(e.target.classList.contains("div-modal")){
             modal.classList.remove("open");
             original.classList.remove("open");
+            paginator[0].style.visibility="visible";
+            
             projects.forEach((project) => {
-                project.style.display="block";
+                project.style.visibility="visible";
             });
         }
     });
@@ -59,11 +65,11 @@ function changeBtnColor(){
     var button = document.getElementById("delete-btn");
     var isChecked = document.getElementById("deleteCheck");
     if(isChecked.checked){
-        button.classList.remove("btn-primary");
+        button.classList.remove("button");
         button.classList.add("btn-danger");
     }
     else if(!isChecked.checked){
-        button.classList.add("btn-primary");
+        button.classList.add("button");
         button.classList.remove("btn-danger");
     }
 }

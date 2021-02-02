@@ -18,7 +18,7 @@
             </div>
         @endif
 
-        <div class="container mt-5 rounded text-white bg-dark">
+        <div class="container mt-5 rounded text-white bg-dark contact">
             <br/>
             <h2 class="text-center">Kontakta oss</h5>
             <div class="row contactInfo">
@@ -41,10 +41,10 @@
 
                 <div class="col-sm-12 col-lg-7">
                     <p class="lead mt-3">Eller fyll i formuläret så återkommer vi så snart vi kan!</p>
-                    <form action="{{ route('send_mail') }}" method="POST">
+                    <form action="{{ route('send_mail') }}" method="POST" id="contactForm">
                         @csrf
                         <div class="form-group">
-                            <label for="email">Din epostadress</label>
+                            <label for="email">Din epostadress <span class="required">*</span></label>
                             <input type="email" class="form-control @error('email') border border-danger @enderror" id="email" name="email" placeholder="email@outlook.com" value="{{ old('email') }}">
                             <small id="emailHelp" class="form-text text-muted">Din epostadress delas aldrig med någon annan.</small>
                             @error('email')
@@ -54,7 +54,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="phone">Ditt telefonnummer</label>
+                            <label for="phone">Ditt telefonnummer <span class="required">*</span></label>
                             <input type="number" class="form-control @error('phone') border border-danger @enderror" id="phone" name="phone" placeholder="0701234567" value="{{ old('phone') }}">
                             <small id="emailHelp" class="form-text text-muted">Ditt telefonnummer delas aldrig med någon annan.</small>
                             @error('phone')
@@ -64,7 +64,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="subject">Ämne</label>
+                            <label for="subject">Ämne <span class="required">*</span></label>
                             <input type="text" class="form-control @error('subject') border border-danger @enderror" id="subject" name="subject" placeholder="Ämne" value="{{ old('subject') }}">
                             @error('subject')
                                 <div>
@@ -74,7 +74,7 @@
                             
                         </div>
                         <div class="form-group">
-                            <label for="description">Beksriv ärendet</label>
+                            <label for="description">Beksriv ärendet <span class="required">*</span></label>
                             <textarea id="description" class="form-control @error('description') border border-danger @enderror" name="description" rows="5" value="{{ old('description') }}"></textarea>
                             @error('description')
                                 <div>
@@ -84,7 +84,7 @@
                             
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary w-50" value="Skicka mail">
+                            <button type="submit" class="btn button w-50" form="contactForm"><span class="material-icons icons">send</span> Skicka Mail</button>
                         </div>
                     </form>
                 </div>

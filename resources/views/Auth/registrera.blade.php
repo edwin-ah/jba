@@ -5,8 +5,9 @@
         <form class="mt-5" action="{{ route('register') }}" method="POST">
             <!--csrf token-->
             @csrf
-            <h2>Registrera</h2>
-            <div class="container form_container py-3 px-5">
+            <div class="container form_container py-3 px-5 bgDiv">
+                <h2 class="text-center">Registrera</h2>
+                <hr class="w-100"/>
                 <div class="form-group px-3">
                     <label for="name">Namn</label>
                     <input type="text" id="name" name="name" placeholder="Ange ditt namn" class="form-control @error('name') border border-danger @enderror" value="{{ old('name') }}">
@@ -48,7 +49,7 @@
                     @enderror
                 </div>
                 <div class="form-group py-2 px-3">
-                    <input type="submit" value="Registrera" class="btn btn-primary w-25">
+                    <input type="submit" value="Registrera" class="btn button w-25">
                 </div>
             </div>
         </form>

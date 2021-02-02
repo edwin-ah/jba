@@ -1,12 +1,13 @@
 @extends('layouts.app')
 @section('content')
-    <!--Formulär för att logga in-->
+  
     <div class="container h-100">
         <form class="mt-5" action="{{ route('login') }}" method="POST">
             <!--csrf token-->
             @csrf
-            <h2>Logga in</h2>
-            <div class="container form_container py-3 px-5">
+            <div class="container form_container py-3 px-5 bgDiv">
+                <h2 class="text-center">Logga in</h2>
+                <hr class="w-100"/>
                 <!--Kolla om användaren försökt logga in-->
                 @if (session('inloggad'))
                     <div class="alert alert-danger text-center">
@@ -35,7 +36,7 @@
                     @enderror
                 </div>
                 <div class="form-group py-2 px-3">
-                    <input type="submit" value="Logga in" class="btn btn-primary w-25">
+                    <input type="submit" value="Logga in" class="btn button w-25">
                 </div>
             </div>
         </form>

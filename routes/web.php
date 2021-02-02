@@ -14,7 +14,8 @@ use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/kontakt', [HomeController::class, 'contact'])->name('contact');
+Route::get('/kontakta-oss', [HomeController::class, 'contact'])->name('contact');
+Route::get('/om-oss', [HomeController::class, 'about'])->name('about');
 
 //Routes för att registrera. Namn är register
 Route::get('/registrera', [RegisterController::class, 'index'])->name('register');
@@ -45,4 +46,4 @@ Route::get('delete_image/{project}', [DeleteImageController::class, 'index'])->n
 Route::post('delete_image', [DeleteImageController::class, 'deleteImage'])->name('delete_image')->middleware('auth');
 
 //Route för mail
-Route::post('/kontakt', [MailController::class, 'sendMail'])->name('send_mail');
+Route::post('/kontakta-oss', [MailController::class, 'sendMail'])->name('send_mail');

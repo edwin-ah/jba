@@ -1,34 +1,36 @@
 @extends('layouts.app')
 @section('content')
     <!--Jumbotron-->
-    <div class="jumbotron text-white jumbotron-image shadow">
-        <div class="container">
-          <h1 class="ml-5 mb-3 ">Johannes Lundebacke</h1>
-          <p class="mx-5 lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur! Odit, blanditiis deleniti! Id veritatis porro officiis unde! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia cumque ipsum maiores at eaque laborum, ratione explicabo natus harum ea sed molestias repellendus nisi hic iure delectus, error commodi tenetur. Lorem ipsum dolor sit amet consectetur adipisicing elit.?</p>
-          <hr class="my-4">
-          <a class="ml-2 btn btn-primary a-btn" href="#">Mer om oss!</a>
-          <a class="ml-2 btn btn-primary a-btn" href="#">Kontakta oss!</a>
+    <div class="jumbotron shadow text-center">
+      <div class="container">
+        <h2 class="mb-4">Johannes Bygg & Anläggning</h2>
+        <p class="mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur!</p>
+        <hr class="my-4">
+        <div class="align-items-center">
+          <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="#">Mer om oss!</a>
+          <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="{{ route('contact') }}">Kontakta oss!</a>
         </div>
       </div>
+    </div>
 
 
-      <!--Ikoner: Hus(Projekt) Telefon(Kontakt) Gubbe(Om oss)-->
-      <div class="container-fluid padding">
+      <!--Ikoner: (Projekt) (Kontakt) (Om oss)-->
+      <div class="container-fluid padding iconsDiv">
         <div class="row text-center padding">
-          <div class="col-xs-12 col-md-4">
+          <div class="col-xs-12 col-md-4 mt-3 icon">
             <a href="{{ route('project') }}">
               <img src="{{ URL('images/icons/project_icon.png') }}" alt="projekt-ikon">
               <h4 class="icon-text">Kolla in våra projekt</h4>
             </a>  
           </div>
-          <div class="col-xs-12 col-md-4">
+          <div class="col-xs-12 col-md-4 mt-3 icon">
             <a href="{{ route('contact') }}">
               <img src="{{ URL('images/icons/phone_icon.png') }}" alt="kontakt-ikon">
               <h4 class="icon-text">Kontakta oss</h4>
             </a>
           </div>
-          <div class="col-xs-12 col-md-4">
-            <a href="#">
+          <div class="col-xs-12 col-md-4 mt-3 icon">
+            <a href="{{ route('about') }}">
               <img src="{{ URL('images/icons/about_icon.png') }}" alt="om_oss-ikon">
               <h4 class="icon-text">Mer om oss</h4>
             </a>  

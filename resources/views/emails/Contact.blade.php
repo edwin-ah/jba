@@ -1,15 +1,14 @@
 @component('mail::message')
-{{ $subject }}
+<h2>{{ $subject }}</h2>
 
-Nytt mail från {{ $email }}!
-<br/>
-Telefonnummer {{ $phone }}
+<p class="small">Nytt mail från {{ $email }}!</p>
+<p class="lead">Telefonnummer {{ $phone }}</p>
 
 {{ $description }}
 
-@component('mail::button', ['url' => ''])
+{{-- @component('mail::button', ['url' => ''])
 Button Text
 @endcomponent
 
-{{ config('app.name') }}
+{{ config('app.name') }} --}}
 @endcomponent
