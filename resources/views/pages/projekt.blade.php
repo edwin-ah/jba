@@ -39,10 +39,12 @@
             <div class="projectCards row">
                 @foreach ($projects as $project)
                     <div class="col-xl-4 col-lg-6 col-md-6 col-xs-12">
-                        <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth mx-auto">
+                        <div class="card my-4 mr-4 project-card @auth project-card--auth @endauth mx-auto bgDiv text-white">
                             <!--Kolla hur många bilder projektet har-->
                             @if (count($project->images) == 0)
-                                <p class="mx-auto lead project-noImg">Ingen bild</p>
+                            <div class="img-container">
+                                <img class="card-img-top" src="{{ URL('images/logos/jba_logo.png') }}" alt="Logo JBA" data-original="{{ URL('images/logos/jba_logo.png') }}" />
+                            </div>
                             @elseif(count($project->images) == 1)
                                 <div class="img-container">
                                     <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild" data-original="/storage/projectImages/{{ $project->images->first()->imagename }}" />
@@ -73,15 +75,15 @@
 
                             <div class="card-body">
                                 @auth
-                                    <h5 class="card-title font-weight-bold">{{ $project->projectname }}</h5>
+                                    <h5 class="card-title lead">{{ $project->projectname }}</h5>
                                 @endauth
                                 <p class="card-text">{{ $project->description }}</p>
                                 <!--Buttons om användaren är inloggad-->
                                 @auth
-                                    <div class="d-flex admin-buttons">
-                                        <a href="{{ route('edit_project_view', ['project' => $project->projectname]) }}" class="btn btn-primary mr-1 ml-1">Redigera projekt</a>
+                                    <div class="d-flex">
+                                        <a href="{{ route('edit_project_view', ['project' => $project->projectname]) }}" class="btn btn-primary mr-1">Redigera projekt</a>
                                         <a href="{{ route('delete_image_view', ['project' => $project->projectname]) }}" class="btn btn-danger mr-1 ml-1">Radera bilder</a>
-                                        <a href="{{ route('delete_project_view', ['project' => $project->projectname]) }}" class="btn btn-danger mr-1 ml-1">Radera projektet</a>
+                                        <a href="{{ route('delete_project_view', ['project' => $project->projectname]) }}" class="btn btn-danger ml-1">Radera projektet</a>
                                     </div>
                                 @endauth
                             </div>

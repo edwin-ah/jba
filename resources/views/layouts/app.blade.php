@@ -56,6 +56,7 @@
       </div>
       
       @yield('content')
+      <div class="footer-spacing"></div>
       <!--Footer-->
       <footer id="footer">
         <div class="container-fluid padding">

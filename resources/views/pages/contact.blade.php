@@ -18,11 +18,11 @@
             </div>
         @endif
 
-        <div class="container mt-5 rounded text-white bg-dark contact">
+        <div class="container mt-5 rounded text-white bgDiv">
             <br/>
             <h2 class="text-center">Kontakta oss</h5>
             <div class="row contactInfo">
-                <hr class="w-100"/>
+                <hr class="h-separator"/>
                 <div class="col-sm-12 col-lg-5">
                     <p class="lead mt-3">Kontakta oss genom följande uppgifter</p>
                     <div class="contactInfo-list">

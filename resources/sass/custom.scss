@@ -51,7 +51,7 @@ a:hover{
 }
 
 #nav-bar a{
-    margin-right: 2rem;
+    margin-right: 2.5rem;
     font-size: x-large;
 }
 
@@ -59,6 +59,44 @@ a:hover{
     font-size: x-large;
     border: 0px;
 }
+
+/* Footer */
+
+.footer-spacing{
+    height: ($spacer);
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 125px;
+    background-color: #A5C4D9;
+    color: #264653;
+    padding: 1rem;
+    font-size: medium;
+}
+
+footer a{
+    color: #E76F51;
+}
+
+/* Footer End */
+
+.h-separator{
+    width: 100%;
+    height: 3px;
+    color:white;
+    background-color: white;
+    border: none;
+}
+
+.form_container{
+    background-color: #ffffff;
+    border-radius: 1rem;
+}
+
+/* Index */ 
 
 .jumbotron h2{
     color: #264653;
@@ -91,38 +129,30 @@ a:hover{
     transform: scale(1.1);
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 125px;
-    background-color: #A5C4D9;
-    color: #264653;
-    padding: 1rem;
-    font-size: medium;
+/* Index End */
+
+/* Contact */
+
+.contactInfo-list {
+    margin-bottom: 10px;
 }
 
-footer a{
-    color: #E76F51;
+.contactInfo-list li{
+    list-style-type: none;
 }
 
-.form_container{
-    background-color: #ffffff;
-    border-radius: 1rem;
+.icons {
+  position: relative;
+  top: 5px;
 }
 
-.img-preview{
-    display: none;
-    margin-top: 1rem;
-    width: 300px;
-    min-height: 100px;
+.required{
+    color: red;
 }
 
-.img-preview-img{
-    display: none;
-    width: 100%;
-    max-height: 300px;
-}
+/* Contact End */
+
+/* Projekt */
 
 .project-card{
     max-width: 330px;
@@ -138,12 +168,6 @@ footer a{
 .project-card img{
     width: 100%;
     height: 300px;
-}
-
-.project-noImg{
-    height: 300px;
-    padding: 0px;
-    margin: 0px;
 }
 
 .img-container{
@@ -190,61 +214,34 @@ footer a{
     transform: translate(-50%, -50%) scale(1);
 }
 
-//Ta bort bild
+/* Projekt End */
+
+.img-preview{
+    display: none;
+    margin-top: 1rem;
+    width: 300px;
+    min-height: 100px;
+}
+
+.img-preview-img{
+    display: none;
+    width: 100%;
+    max-height: 300px;
+}
+
 .delete-image-div img{
     width: 330px;
     height: 300px;
 }
 
-//Kontaktsidan
-.contactInfo-list {
-    margin-bottom: 10px;
-}
-
-.contactInfo-list li{
-    list-style-type: none;
-}
-
-.contactInfo hr{
-    height: 3px;
-    color:white;
-    background-color: white;
-    border: none;
-}
-
-.icons {
-  position: relative;
-  top: 5px;
-}
-
-.required{
-    color: red;
-}
-
-.contact{
-    background-color: #264653 !important;
-}
-
-.about-div{
-    background-color: #264653;
-}
-
-.about-img img{
-    max-width: 100%;
-    height: 80%;
-}
-
-.edit-btn{
-    background-color: #264653;
-    color: #E76F51;
-}
 
 #delete-btn{
     font-size: large !important;
 }
 
-@media only screen and (max-width: 834px){
+@media only screen and (max-width: 900px){
     #nav-bar a, .btn-logout{
+        margin-right: 1rem;
         font-size: large;
     }
 }
@@ -264,11 +261,6 @@ footer a{
 
     .footer-links{
         display: none;
-    }
-
-    .iconsDiv{
-        margin-top: 20rem;
-        margin-bottom: 20rem;
     }
 
     #nav-bar {

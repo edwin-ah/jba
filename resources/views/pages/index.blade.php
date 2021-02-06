@@ -5,8 +5,8 @@
       <div class="container">
         <h2 class="mb-4">Johannes Bygg & Anläggning</h2>
         <p class="mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur!</p>
-        <hr class="my-4">
-        <div class="align-items-center">
+        
+        <div class="align-items-center mt-5">
           <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="#">Mer om oss!</a>
           <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="{{ route('contact') }}">Kontakta oss!</a>
         </div>
@@ -15,7 +15,7 @@
 
 
       <!--Ikoner: (Projekt) (Kontakt) (Om oss)-->
-      <div class="container-fluid padding iconsDiv">
+      <div class="container-fluid padding mt-5">
         <div class="row text-center padding">
           <div class="col-xs-12 col-md-4 mt-3 icon">
             <a href="{{ route('project') }}">
