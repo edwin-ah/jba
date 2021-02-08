@@ -18,7 +18,7 @@ Route::get('/kontakta-oss', [HomeController::class, 'contact'])->name('contact')
 Route::get('/om-oss', [HomeController::class, 'about'])->name('about');
 
 //Routes för att registrera. Namn är register
-Route::get('/registrera', [RegisterController::class, 'index'])->name('register');
+Route::get('/registrera', [RegisterController::class, 'index'])->name('register')->middleware('auth');
 Route::post('/registrera', [RegisterController::class, 'store']);
 
 //Routes för att logga in
