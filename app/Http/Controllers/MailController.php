@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,16 +21,21 @@ class MailController extends Controller
             'description' => 'required|min:10'
         ]);
 
-        $subject = $request->subject;
-
         //skicka mail
-        Mail::to('potemose@gmail.com')->send(new ContactMail($request->email, $request->phone, $request->subject, $request->description));
-        if(!count(Mail::failures()) > 0){
+        try{
+            Mail::to('potemose@gmail.com')->send(new ContactMail($request->email, $request->phone, $request->subject, $request->description));
+            if(!count(Mail::failures()) > 0){
+                return back()
+                ->with('success', 'Email har skickats! Vi återkommer så snart vi kan.');
+            } else {
+                return back()
+                ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.');
+            }
+        } 
+        catch(Exception) {
             return back()
-            ->with('success', 'Email har skickats! Vi återkommer så snart vi kan.');
-        } else {
-            return back()
-            ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.');
+                ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.');
         }
+        
     }
 }

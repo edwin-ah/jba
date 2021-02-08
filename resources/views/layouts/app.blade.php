@@ -31,14 +31,14 @@
                   <li class="nav-item"> 
                     <a class="nav-link rounded-pill {{ '/' == request()->path() ? 'active' : ''}}" href="{{ route('index') }}">&nbsp;Hem&nbsp;</a>
                   </li>
-                  <li class="nav-item"> 
-                    <a class="nav-link rounded-pill {{ 'om-oss' == request()->path() ? 'active' : ''}}" href="{{ route('about') }}">Om oss</a>
+                  <li class="nav-item">
+                    <a class="nav-link rounded-pill {{ 'projekt' == request()->path() ? 'active' : ''}}" href="{{ route('project') }}">Projekt</a> 
                   </li>
                   <li class="nav-item"> 
-                      <a class="nav-link rounded-pill {{ 'projekt' == request()->path() ? 'active' : ''}}" href="{{ route('project') }}">Projekt</a>
+                    <a class="nav-link rounded-pill {{ 'kontakta-oss' == request()->path() ? 'active' : ''}}" href="{{ route('contact') }}">Kontakt</a>
                     </li>
                   <li class="nav-item"> 
-                    <a class="nav-link rounded-pill {{ 'kontakta-oss' == request()->path() ? 'active' : ''}}" href="{{ route('contact') }}">Kontakt</a>
+                    <a class="nav-link rounded-pill {{ 'om-oss' == request()->path() ? 'active' : ''}}" href="{{ route('about') }}">Om oss</a>
                   </li>
                   @auth
                   <li class="nav-item"> 
@@ -74,9 +74,9 @@
                     <h5>Länkar:</h5>
                     <a href="{{ route('about') }}">Om oss</a>
                     <br/>
-                    <a href="#">Projekt</a>
+                    <a href="{{ route('project') }}">Projekt</a>
                     <br/>
-                    <a href="#">Kontakt</a>
+                    <a href="{{ route('contact') }}">Kontakt</a>
                 </div>
             </div>
         </div>
