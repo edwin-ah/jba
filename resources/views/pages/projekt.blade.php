@@ -47,7 +47,7 @@
                             </div>
                             @elseif(count($project->images) == 1)
                                 <div class="img-container">
-                                    <img class="card-img-top" src="/storage/projectImages/{{ $project->images->first()->imagename }}" alt="projektbild" data-original="/storage/projectImages/{{ $project->images->first()->imagename }}" />
+                                    <img class="card-img-top" src={{ URL('storage/projectImages/'.$project->images->first()->imagename) }} alt="projektbild" data-original={{ URL('storage/projectImages/'.$project->images->first()->imagename) }} />
                                 </div>
                             @elseif(count($project->images) > 1)
                                 <div class="carouselExampleControls-{{ $project->projectname}} carousel slide" data-ride="carousel">
@@ -56,7 +56,7 @@
                                         @foreach ($project->images->pluck('imagename') as $image)
                                             <div class="carousel-item @if($loop->first) active @endif">                                                
                                                 <div class="img-container">
-                                                    <img class="card-img-top" src="/storage/projectImages/{{$image}}" alt="projektbild" data-original="/storage/projectImages/{{$image}}"/>                                                    
+                                                    <img class="card-img-top" src={{ URL('storage/projectImages/'.$image) }} alt="projektbild" data-original={{ URL('storage/projectImages/'.$image) }} />                                               
                                                 </div>
                                             </div>
                                         @endforeach
