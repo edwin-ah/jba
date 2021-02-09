@@ -23,7 +23,7 @@ class MailController extends Controller
 
         //skicka mail
         try{
-            Mail::to('potemose@gmail.com')->send(new ContactMail($request->email, $request->phone, $request->subject, $request->description));
+            Mail::to('edwinah@jbabygg.se')->send(new ContactMail($request->email, $request->phone, $request->subject, $request->description));
             if(!count(Mail::failures()) > 0){
                 return back()
                 ->with('success', 'Email har skickats! Vi återkommer så snart vi kan.');
@@ -32,9 +32,9 @@ class MailController extends Controller
                 ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.');
             }
         } 
-        catch(Exception) {
+        catch(Exception $ex) {
             return back()
-                ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.');
+                ->with('failure', 'Ett fel uppstod, prova vid ett senare tillfälle.'.$ex);
         }
         
     }
