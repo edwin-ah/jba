@@ -33,7 +33,7 @@ class DeleteProjectController extends Controller
                 try{
                     Storage::delete('public/projectImages/'.$image->imagename);
                 }
-                catch(Exception){
+                catch(Exception $ex){
                     return redirect()->route('project')
                     ->with('failure', 'Projektet är borttaget men det gick inte att ta bort bilden!');
                 }
