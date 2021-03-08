@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Lägg Till Projekt - JBA'])
 @section('content')
 <div class="container h-100">
     <form class="mt-5" action="{{ route('add_project') }}" method="POST">

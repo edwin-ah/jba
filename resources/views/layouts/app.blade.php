@@ -3,7 +3,14 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>JBA</title>
+      <meta property="og:title" content="Johannes Bygg & Anläggnig" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.jbabygg.se" />
+      <meta property="og:image" content="{{ URL('images/logos/jba-og-logo.png') }}" />
+      <meta property="og:image:width" content="1500" />
+      <meta property="og:image:height" content="1500" />
+      <title>{{ $title ?? config('app.name') }}</title>
+      <link rel="shortcut icon" type="image/png" href="{{ URL('images/logos/favicon.png') }}">
       <!-- Scripts -->
       <script src="{{ asset('js/app.js') }}" defer></script>
       <!-- Styles -->
@@ -21,7 +28,7 @@
           <nav class="navbar navbar-expand-md navbar-light sticky-top">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{ route('index') }}">
-                <img id="nav-logo" src="{{ URL('images/logos/jba_logo.png') }}" alt="logo" class="rounded">
+                <img id="nav-logo" src="{{ URL('images/logos/jba-nav-logo.png') }}" alt="logo" class="img-fluid">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
@@ -56,7 +63,7 @@
       </div>
       
       @yield('content')
-      <div class="footer-spacing"></div>
+      
       <!--Footer-->
       <footer id="footer">
         <div class="container-fluid padding">
@@ -66,17 +73,17 @@
                 </div>
                 <div class="col-md-4 footer-contact">
                     <h5>Kontakt:</h5>
-                    <span>0705904854</span>
+                    <span>+46705904854</span>
                     <br/>
-                    <p>jba-johannes@hotmail.com</p>
+                    <p>johannes@jbabygg.se</p>
                 </div>
                 <div class="col-md-4 footer-links">
                     <h5>Länkar:</h5>
-                    <a href="{{ route('about') }}">Om oss</a>
+                    <a class="text-dark" href="{{ route('about') }}">Om oss</a>
                     <br/>
-                    <a href="{{ route('project') }}">Projekt</a>
+                    <a class="text-dark" href="{{ route('project') }}">Projekt</a>
                     <br/>
-                    <a href="{{ route('contact') }}">Kontakt</a>
+                    <a class="text-dark" href="{{ route('contact') }}">Kontakt</a>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Logga In - JBA'])
 @section('content')
   
     <div class="container h-100">

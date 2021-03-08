@@ -18,7 +18,8 @@ class MailController extends Controller
             'email' => 'required|email|max:255',
             'phone' => 'required|digits_between:6,10',
             'subject' => 'required|max:255',
-            'description' => 'required|min:10'
+            'description' => 'required|min:10',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         //skicka mail

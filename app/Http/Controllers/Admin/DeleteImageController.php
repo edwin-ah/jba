@@ -27,21 +27,32 @@ class DeleteImageController extends Controller
             return redirect()->route('project')
             ->with('failure', 'Ingen bild raderad!');
         }
+
+        $succeed = array();
+
         $imageId = $request->imageId;
         foreach($imageId as $image){
             $imagename = DB::table('project_images')->where('id', '=', $image)->pluck('imagename');
             if(Storage::delete('public/projectImages/'.$imagename[0])){
                 if(Project_image::destroy($image)){
-                    return redirect()->route('project')
-                    ->with('success', 'De/den valda bilden är borttagen!');
+                    array_push($succeed, true);
                 } else {
-                    return redirect()->route('project')
-                    ->with('failure', 'Det gick inte ta bort bilden!');
+                    array_push($succeed, false);
                 }
             } else {
-                return redirect()->route('project')
-                ->with('failure', 'Det gick inte ta bort bilden!');
+                array_push($succeed, false);
             }
+        }
+
+        if(in_array(true, $succeed)){
+            return redirect()->route('project')
+                ->with('success', 'En eller flera bilder är borttagna!');
+        } else if(in_array(true, $succeed) && in_array(false, $succeed)){
+            return redirect()->route('project')
+                ->with('failure', 'En eller flera bilder är borttagna, men ett fel uppstod!');
+        } else {
+            return redirect()->route('project')
+                ->with('failure', 'Ett fel uppstod');
         }
     }
 }

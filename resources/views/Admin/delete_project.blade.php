@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Radera Projekt - JBA'])
 @section('content')
 <div class="container w-100">
     <form class="mt-5" action="{{ route('delete_project') }}" method="POST">

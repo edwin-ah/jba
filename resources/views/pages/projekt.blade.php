@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Projekt - JBA'])
 @section('content')
+<h1 class="text-center mt-4"><span class="fat">Projekt</span></h1>
+<hr class="hr-header-separator"/>
     <div class="container">
-
-        
         @if($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show text-center mt-1">
             <p class="lead">{{ $message }}</p>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Registrera - JBA'])
 @section('content')
     <!--Formulär för att registrera-->
     <div class="container h-100">

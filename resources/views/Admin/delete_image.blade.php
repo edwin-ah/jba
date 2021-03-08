@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Radera Bild - JBA'])
 @section('content')
     <div class="container h-100">
         <form class="mt-5" action="{{ route('delete_image') }}" method="POST">

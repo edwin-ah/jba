@@ -16,17 +16,21 @@ body{
     color: #ffffff;
 }
 
-.navbarBg, .jumbotron{
+.navbarBg{
     background-color: #A5C4D9 !important;
+}
+
+.jumb-btns {
+    margin-top: 4rem !important;
 }
 
 .active{
     background-color: rgb(213,213,213, 0.3);
 }
 
-a:hover{
+.nav-item a:hover{
     cursor: url(../../public/images/icons/icon_hammer.png), auto;
-    background-color: rgb(213,213,213, 0.3)
+    background-color: rgb(213,213,213, 0.3);
 }
 
 .btn.button{
@@ -35,6 +39,7 @@ a:hover{
     font-family: 'Open Sans', sans-serif;
     border-color: #E76F51;
     font-size: large;
+    font-weight: 600;
 }
 
 .btn.button:hover{
@@ -50,14 +55,24 @@ a:hover{
     border-color: black;
 }
 
+
 #nav-bar a{
     margin-right: 2.5rem;
-    font-size: x-large;
+    font-size: large;
 }
 
 .btn-logout{
-    font-size: x-large;
+    font-size: large;
     border: 0px;
+}
+
+
+.hr-header-separator {
+    width: 75%;
+    height: 2px;
+    color:#264653;
+    background-color: #264653;
+    border: none;
 }
 
 /* Footer */
@@ -77,10 +92,6 @@ footer{
     font-size: medium;
 }
 
-footer a{
-    color: #E76F51;
-}
-
 /* Footer End */
 
 .h-separator{
@@ -98,15 +109,26 @@ footer a{
 
 /* Index */ 
 
-.jumbotron h2{
-    color: #264653;
+.small {
+    display: block;
     font-weight: bolder;
+    font-size: 1.25rem;
 }
 
-.jumbotron p{
+.jumbotron p, .jumbotron h1{
     font-family: 'Work Sans', sans-serif;
     color: #000000;
-    font-size: large;
+}
+
+.jumbotron p {
+    font-size: 16px;
+}
+
+.jumb-pic {
+    background-image: linear-gradient(to bottom, rgba(150, 150, 150, 0.8) 0%, rgba(73, 76, 78, 0.8) 100%), url("../../storage/app/public/projectImages/jumb-pic3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .icon{
@@ -129,9 +151,17 @@ footer a{
     transform: scale(1.1);
 }
 
+.about-index p {
+    font-size: 16px;
+}
+
 /* Index End */
 
 /* Contact */
+.contact {
+    width: 90%;
+    background-color: #264653;
+}
 
 .contactInfo-list {
     margin-bottom: 10px;
@@ -149,6 +179,7 @@ footer a{
 .required{
     color: red;
 }
+
 
 /* Contact End */
 
@@ -216,6 +247,33 @@ footer a{
 
 /* Projekt End */
 
+/* About */
+
+.fat {
+    font-weight: bolder;
+}
+
+
+.jba {
+    color: #E76F51;
+    font-weight: bolder;
+}
+
+.about {
+    width: 90%;
+    margin: auto auto;
+}
+
+.about p {
+    font-size: 16px;
+}
+
+.services li{
+    list-style-type: none;
+}
+
+/* About End */
+
 .img-preview{
     display: none;
     margin-top: 1rem;
@@ -237,6 +295,12 @@ footer a{
 
 #delete-btn{
     font-size: large !important;
+}
+
+@media only screen and (min-width: 1500px){
+    .container-about {
+        width: 90% !important;
+    }
 }
 
 @media only screen and (max-width: 900px){
@@ -296,5 +360,21 @@ footer a{
     .img-modal.open{
         height: 40%;
         transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@media only screen and (max-width: 460px){
+    .recaptcha {
+        transform:scale(0.9)!important;
+        -webkit-transform:scale(0.9)!important; transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+    }
+}
+
+@media only screen and (max-width: 358px){
+    .recaptcha {
+        transform:scale(0.8)!important;
+        -webkit-transform:scale(0.8)!important; transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
     }
 }

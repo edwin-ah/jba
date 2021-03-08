@@ -1,21 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'JBA'])
 @section('content')
+
+<!--<div class="jumb-pic">-->
     <!--Jumbotron-->
-    <div class="jumbotron shadow text-center">
-      <div class="container">
-        <h2 class="mb-4">Johannes Bygg & Anläggning</h2>
-        <p class="mx-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur!</p>
-        
-        <div class="align-items-center mt-5">
-          <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="#">Mer om oss!</a>
-          <a class="ml-2 mt-1 btn button rounded-pill shadow px-3" href="{{ route('contact') }}">Kontakta oss!</a>
-        </div>
+    <div class="jumbotron jumb-pic shadow">
+      <h1 class="text-center fat">Johannes Bygg & Anläggning <span class="small mt-1">- din hantverkare i norra Bohuslän</span></h1>
+      <div class="container mt-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quo quos. Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur! Accusantium magni illum exercitationem minus aperiam error dolorem doloribus recusandae consequatur!</p>
       </div>
+      
+        <div class="d-flex justify-content-center jumb-btns">
+          <a class="mr-3 mt-1 btn button rounded-pill shadow px-3" href="{{ route('about') }}">Mer om oss!</a>
+          <a class="ml-3 mt-1 btn button rounded-pill shadow px-3" href="{{ route('contact') }}">Kontakta oss!</a>
+        </div>
     </div>
-
-
       <!--Ikoner: (Projekt) (Kontakt) (Om oss)-->
-      <div class="container-fluid padding mt-5">
+      <div class="container-fluid padding">
         <div class="row text-center padding">
           <div class="col-xs-12 col-md-4 mt-3 icon">
             <a href="{{ route('project') }}">
@@ -37,4 +37,6 @@
           </div>
         </div>
       </div>
+<!--</div>-->
+      
 @endsection
